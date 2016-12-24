@@ -1,4 +1,4 @@
-# 双随机系统 https://travis-ci.org/AnalectsOfConfucius/DoubleRandom.svg?branch=master
+# 双随机系统 [![Build Status][travis-image]][travis-url]
 
 This application was generated using JHipster 3.12.2, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v3.12.2](https://jhipster.github.io/documentation-archive/v3.12.2).
 
@@ -108,3 +108,6 @@ To set up a CI environment, consult the [Setting up Continuous Integration][] pa
 [Karma]: http://karma-runner.github.io/
 [Jasmine]: http://jasmine.github.io/2.0/introduction.html
 [Protractor]: https://angular.github.io/protractor/
+[travis-image]: https://api.travis-ci.org/AnalectsOfConfucius/DoubleRandom.svg?branch=master
+[travis-url]: https://travis-ci.org/AnalectsOfConfucius/DoubleRandom
+
