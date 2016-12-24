@@ -1,4 +1,4 @@
-# 双随机系统
+# 双随机系统 https://travis-ci.org/AnalectsOfConfucius/DoubleRandom.svg?branch=master
 
 This application was generated using JHipster 3.12.2, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v3.12.2](https://jhipster.github.io/documentation-archive/v3.12.2).
 
