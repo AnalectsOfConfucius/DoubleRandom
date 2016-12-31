@@ -1,0 +1,202 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDoubleRandomLabel">Create or edit a Double Random</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.doubleRandom.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.doubleRandom.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomName">Double Random Name</label>
+            <input type="text" class="form-control" name="doubleRandomName" id="field_doubleRandomName"
+                    ng-model="vm.doubleRandom.doubleRandomName"
+                    required ng-maxlength="32" />
+            <div ng-show="editForm.doubleRandomName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomName.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomName.$error.maxlength">
+                    This field cannot be longer than 32 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomDate">Double Random Date</label>
+            <input type="text" class="form-control" name="doubleRandomDate" id="field_doubleRandomDate"
+                    ng-model="vm.doubleRandom.doubleRandomDate"
+                    required ng-maxlength="32" />
+            <div ng-show="editForm.doubleRandomDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomDate.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomDate.$error.maxlength">
+                    This field cannot be longer than 32 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomNotary">Double Random Notary</label>
+            <input type="text" class="form-control" name="doubleRandomNotary" id="field_doubleRandomNotary"
+                    ng-model="vm.doubleRandom.doubleRandomNotary"
+                    required ng-maxlength="32" />
+            <div ng-show="editForm.doubleRandomNotary.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomNotary.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomNotary.$error.maxlength">
+                    This field cannot be longer than 32 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomCompanyCondition1">Double Random Company Condition 1</label>
+            <input type="text" class="form-control" name="doubleRandomCompanyCondition1" id="field_doubleRandomCompanyCondition1"
+                    ng-model="vm.doubleRandom.doubleRandomCompanyCondition1"
+                    required ng-maxlength="64" />
+            <div ng-show="editForm.doubleRandomCompanyCondition1.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomCompanyCondition1.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomCompanyCondition1.$error.maxlength">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomCompanyCondition2">Double Random Company Condition 2</label>
+            <input type="text" class="form-control" name="doubleRandomCompanyCondition2" id="field_doubleRandomCompanyCondition2"
+                    ng-model="vm.doubleRandom.doubleRandomCompanyCondition2"
+                    required ng-maxlength="64" />
+            <div ng-show="editForm.doubleRandomCompanyCondition2.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomCompanyCondition2.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomCompanyCondition2.$error.maxlength">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomCompanyCondition3">Double Random Company Condition 3</label>
+            <input type="text" class="form-control" name="doubleRandomCompanyCondition3" id="field_doubleRandomCompanyCondition3"
+                    ng-model="vm.doubleRandom.doubleRandomCompanyCondition3"
+                    required ng-maxlength="64" />
+            <div ng-show="editForm.doubleRandomCompanyCondition3.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomCompanyCondition3.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomCompanyCondition3.$error.maxlength">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomCompanyCondition4">Double Random Company Condition 4</label>
+            <input type="text" class="form-control" name="doubleRandomCompanyCondition4" id="field_doubleRandomCompanyCondition4"
+                    ng-model="vm.doubleRandom.doubleRandomCompanyCondition4"
+                    required ng-maxlength="64" />
+            <div ng-show="editForm.doubleRandomCompanyCondition4.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomCompanyCondition4.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomCompanyCondition4.$error.maxlength">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomManagerCondition1">Double Random Manager Condition 1</label>
+            <input type="text" class="form-control" name="doubleRandomManagerCondition1" id="field_doubleRandomManagerCondition1"
+                    ng-model="vm.doubleRandom.doubleRandomManagerCondition1"
+                    required ng-maxlength="64" />
+            <div ng-show="editForm.doubleRandomManagerCondition1.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomManagerCondition1.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomManagerCondition1.$error.maxlength">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomManagerCondition2">Double Random Manager Condition 2</label>
+            <input type="text" class="form-control" name="doubleRandomManagerCondition2" id="field_doubleRandomManagerCondition2"
+                    ng-model="vm.doubleRandom.doubleRandomManagerCondition2"
+                    required ng-maxlength="64" />
+            <div ng-show="editForm.doubleRandomManagerCondition2.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomManagerCondition2.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomManagerCondition2.$error.maxlength">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomManagerCondition3">Double Random Manager Condition 3</label>
+            <input type="text" class="form-control" name="doubleRandomManagerCondition3" id="field_doubleRandomManagerCondition3"
+                    ng-model="vm.doubleRandom.doubleRandomManagerCondition3"
+                    required ng-maxlength="64" />
+            <div ng-show="editForm.doubleRandomManagerCondition3.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomManagerCondition3.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomManagerCondition3.$error.maxlength">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_doubleRandomManagerCondition4">Double Random Manager Condition 4</label>
+            <input type="text" class="form-control" name="doubleRandomManagerCondition4" id="field_doubleRandomManagerCondition4"
+                    ng-model="vm.doubleRandom.doubleRandomManagerCondition4"
+                    required ng-maxlength="64" />
+            <div ng-show="editForm.doubleRandomManagerCondition4.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomManagerCondition4.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRandomManagerCondition4.$error.maxlength">
+                    This field cannot be longer than 64 characters.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -6,7 +6,7 @@
     "packageFolder": "com/yyh/dr",
     "serverPort": "8080",
     "authenticationType": "jwt",
-    "hibernateCache": "ehcache",
+    "hibernateCache": "no",
     "clusteredHttpSession": false,
     "websocket": false,
     "databaseType": "sql",
@@ -16,13 +16,14 @@
     "messageBroker": false,
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "fc6605bbe203681d5e069513089062836b364b8a",
+    "jwtSecretKey": "5da9a7ed3f9ebe7e0186ab52c56f6c460d7f0912",
     "useSass": false,
     "applicationType": "monolith",
     "testFrameworks": [
       "gatling"
     ],
     "jhiPrefix": "jhi",
-    "enableTranslation": false
+    "enableTranslation": false,
+    "serviceDiscoveryType": false
   }
 }

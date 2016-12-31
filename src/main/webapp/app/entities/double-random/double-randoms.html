@@ -1,0 +1,76 @@
+<div>
+    <h2>Double Randoms</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="double-random.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Double Random
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Double Random Name</span></th>
+                    <th><span>Double Random Date</span></th>
+                    <th><span>Double Random Notary</span></th>
+                    <th><span>Double Random Company Condition 1</span></th>
+                    <th><span>Double Random Company Condition 2</span></th>
+                    <th><span>Double Random Company Condition 3</span></th>
+                    <th><span>Double Random Company Condition 4</span></th>
+                    <th><span>Double Random Manager Condition 1</span></th>
+                    <th><span>Double Random Manager Condition 2</span></th>
+                    <th><span>Double Random Manager Condition 3</span></th>
+                    <th><span>Double Random Manager Condition 4</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="doubleRandom in vm.doubleRandoms track by doubleRandom.id">
+                    <td><a ui-sref="double-random-detail({id:doubleRandom.id})">{{doubleRandom.id}}</a></td>
+                    <td>{{doubleRandom.doubleRandomName}}</td>
+                    <td>{{doubleRandom.doubleRandomDate}}</td>
+                    <td>{{doubleRandom.doubleRandomNotary}}</td>
+                    <td>{{doubleRandom.doubleRandomCompanyCondition1}}</td>
+                    <td>{{doubleRandom.doubleRandomCompanyCondition2}}</td>
+                    <td>{{doubleRandom.doubleRandomCompanyCondition3}}</td>
+                    <td>{{doubleRandom.doubleRandomCompanyCondition4}}</td>
+                    <td>{{doubleRandom.doubleRandomManagerCondition1}}</td>
+                    <td>{{doubleRandom.doubleRandomManagerCondition2}}</td>
+                    <td>{{doubleRandom.doubleRandomManagerCondition3}}</td>
+                    <td>{{doubleRandom.doubleRandomManagerCondition4}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="double-random-detail({id:doubleRandom.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="double-random.edit({id:doubleRandom.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="double-random.delete({id:doubleRandom.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

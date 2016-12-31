@@ -5,11 +5,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
+import org.springframework.cache.support.NoOpCacheManager;
 
 import javax.annotation.PreDestroy;
-import javax.cache.CacheManager;
 import javax.inject.Inject;
 
 @Configuration
@@ -26,7 +27,12 @@ public class CacheConfiguration {
     @PreDestroy
     public void destroy() {
         log.info("Closing Cache Manager");
-        cacheManager.close();
     }
 
+    @Bean
+    public CacheManager cacheManager() {
+        log.debug("No cache");
+        cacheManager = new NoOpCacheManager();
+        return cacheManager;
+    }
 }
