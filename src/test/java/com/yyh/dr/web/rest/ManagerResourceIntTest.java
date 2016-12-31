@@ -4,6 +4,7 @@ import com.yyh.dr.DoubleRandomApp;
 
 import com.yyh.dr.domain.Manager;
 import com.yyh.dr.repository.ManagerRepository;
+import com.yyh.dr.service.ManagerService;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -65,6 +66,9 @@ public class ManagerResourceIntTest {
     private ManagerRepository managerRepository;
 
     @Inject
+    private ManagerService managerService;
+
+    @Inject
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
 
     @Inject
@@ -81,7 +85,7 @@ public class ManagerResourceIntTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         ManagerResource managerResource = new ManagerResource();
-        ReflectionTestUtils.setField(managerResource, "managerRepository", managerRepository);
+        ReflectionTestUtils.setField(managerResource, "managerService", managerService);
         this.restManagerMockMvc = MockMvcBuilders.standaloneSetup(managerResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setMessageConverters(jacksonMessageConverter).build();
@@ -301,7 +305,8 @@ public class ManagerResourceIntTest {
     @Transactional
     public void updateManager() throws Exception {
         // Initialize the database
-        managerRepository.saveAndFlush(manager);
+        managerService.save(manager);
+
         int databaseSizeBeforeUpdate = managerRepository.findAll().size();
 
         // Update the manager
@@ -357,7 +362,8 @@ public class ManagerResourceIntTest {
     @Transactional
     public void deleteManager() throws Exception {
         // Initialize the database
-        managerRepository.saveAndFlush(manager);
+        managerService.save(manager);
+
         int databaseSizeBeforeDelete = managerRepository.findAll().size();
 
         // Get the manager

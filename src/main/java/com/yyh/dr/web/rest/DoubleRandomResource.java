@@ -4,7 +4,6 @@ import com.codahale.metrics.annotation.Timed;
 import com.yyh.dr.domain.DoubleRandom;
 
 import com.yyh.dr.repository.DoubleRandomRepository;
-import com.yyh.dr.security.AuthoritiesConstants;
 import com.yyh.dr.web.rest.util.HeaderUtil;
 
 import org.slf4j.Logger;
@@ -12,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
@@ -30,7 +28,7 @@ import java.util.Optional;
 public class DoubleRandomResource {
 
     private final Logger log = LoggerFactory.getLogger(DoubleRandomResource.class);
-
+        
     @Inject
     private DoubleRandomRepository doubleRandomRepository;
 
@@ -43,7 +41,6 @@ public class DoubleRandomResource {
      */
     @PostMapping("/double-randoms")
     @Timed
-    @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<DoubleRandom> createDoubleRandom(@Valid @RequestBody DoubleRandom doubleRandom) throws URISyntaxException {
         log.debug("REST request to save DoubleRandom : {}", doubleRandom);
         if (doubleRandom.getId() != null) {

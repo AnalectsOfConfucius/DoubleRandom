@@ -99,3 +99,5 @@ relationship ManyToMany {
 relationship OneToOne {
 	Manager{managerUser} to User{manager}
 }
+
+service Manager with serviceClass

@@ -2,8 +2,7 @@ package com.yyh.dr.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.yyh.dr.domain.Manager;
-
-import com.yyh.dr.repository.ManagerRepository;
+import com.yyh.dr.service.ManagerService;
 import com.yyh.dr.web.rest.util.HeaderUtil;
 
 import org.slf4j.Logger;
@@ -30,7 +29,7 @@ public class ManagerResource {
     private final Logger log = LoggerFactory.getLogger(ManagerResource.class);
         
     @Inject
-    private ManagerRepository managerRepository;
+    private ManagerService managerService;
 
     /**
      * POST  /managers : Create a new manager.
@@ -46,7 +45,7 @@ public class ManagerResource {
         if (manager.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("manager", "idexists", "A new manager cannot already have an ID")).body(null);
         }
-        Manager result = managerRepository.save(manager);
+        Manager result = managerService.save(manager);
         return ResponseEntity.created(new URI("/api/managers/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("manager", result.getId().toString()))
             .body(result);
@@ -68,7 +67,7 @@ public class ManagerResource {
         if (manager.getId() == null) {
             return createManager(manager);
         }
-        Manager result = managerRepository.save(manager);
+        Manager result = managerService.save(manager);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("manager", manager.getId().toString()))
             .body(result);
@@ -83,8 +82,7 @@ public class ManagerResource {
     @Timed
     public List<Manager> getAllManagers() {
         log.debug("REST request to get all Managers");
-        List<Manager> managers = managerRepository.findAllWithEagerRelationships();
-        return managers;
+        return managerService.findAll();
     }
 
     /**
@@ -97,7 +95,7 @@ public class ManagerResource {
     @Timed
     public ResponseEntity<Manager> getManager(@PathVariable Long id) {
         log.debug("REST request to get Manager : {}", id);
-        Manager manager = managerRepository.findOneWithEagerRelationships(id);
+        Manager manager = managerService.findOne(id);
         return Optional.ofNullable(manager)
             .map(result -> new ResponseEntity<>(
                 result,
@@ -115,7 +113,7 @@ public class ManagerResource {
     @Timed
     public ResponseEntity<Void> deleteManager(@PathVariable Long id) {
         log.debug("REST request to delete Manager : {}", id);
-        managerRepository.delete(id);
+        managerService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("manager", id.toString())).build();
     }
 
