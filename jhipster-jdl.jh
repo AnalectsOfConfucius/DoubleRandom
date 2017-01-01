@@ -64,6 +64,14 @@ entity DoubleRandomResult {
     task String maxlength(1024)
 }
 
+entity Task {
+	taskContent String required maxlength(1024),
+}
+
+relationship OneToMany {
+	DoubleRandom{task} to Task{doubleRandom}
+}
+
 relationship ManyToMany {
 	Manager{doubleRandomResult} to DoubleRandomResult{manager}
 }

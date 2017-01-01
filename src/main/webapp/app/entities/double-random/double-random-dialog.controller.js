@@ -5,14 +5,15 @@
         .module('doubleRandomApp')
         .controller('DoubleRandomDialogController', DoubleRandomDialogController);
 
-    DoubleRandomDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'DoubleRandom', 'DoubleRandomResult'];
+    DoubleRandomDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'DoubleRandom', 'Task', 'DoubleRandomResult'];
 
-    function DoubleRandomDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, DoubleRandom, DoubleRandomResult) {
+    function DoubleRandomDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, DoubleRandom, Task, DoubleRandomResult) {
         var vm = this;
 
         vm.doubleRandom = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.tasks = Task.query();
         vm.doublerandomresults = DoubleRandomResult.query();
 
         $timeout(function (){

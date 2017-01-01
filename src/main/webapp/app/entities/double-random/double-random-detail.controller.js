@@ -5,9 +5,9 @@
         .module('doubleRandomApp')
         .controller('DoubleRandomDetailController', DoubleRandomDetailController);
 
-    DoubleRandomDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'DoubleRandom', 'DoubleRandomResult'];
+    DoubleRandomDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'DoubleRandom', 'Task', 'DoubleRandomResult'];
 
-    function DoubleRandomDetailController($scope, $rootScope, $stateParams, previousState, entity, DoubleRandom, DoubleRandomResult) {
+    function DoubleRandomDetailController($scope, $rootScope, $stateParams, previousState, entity, DoubleRandom, Task, DoubleRandomResult) {
         var vm = this;
 
         vm.doubleRandom = entity;

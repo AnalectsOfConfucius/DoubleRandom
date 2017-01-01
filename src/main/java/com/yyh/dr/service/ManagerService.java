@@ -18,7 +18,7 @@ import java.util.List;
 public class ManagerService {
 
     private final Logger log = LoggerFactory.getLogger(ManagerService.class);
-
+    
     @Inject
     private ManagerRepository managerRepository;
 
@@ -31,16 +31,15 @@ public class ManagerService {
     public Manager save(Manager manager) {
         log.debug("Request to save Manager : {}", manager);
         Manager result = managerRepository.save(manager);
-        log.debug("Save Manager Result : {}", result);
         return result;
     }
 
     /**
      *  Get all the managers.
-     *
+     *  
      *  @return the list of entities
      */
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true) 
     public List<Manager> findAll() {
         log.debug("Request to get all Managers");
         List<Manager> result = managerRepository.findAllWithEagerRelationships();
@@ -54,7 +53,7 @@ public class ManagerService {
      *  @param id the id of the entity
      *  @return the entity
      */
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true) 
     public Manager findOne(Long id) {
         log.debug("Request to get Manager : {}", id);
         Manager manager = managerRepository.findOneWithEagerRelationships(id);

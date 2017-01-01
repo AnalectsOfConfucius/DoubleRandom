@@ -79,6 +79,10 @@ public class DoubleRandom implements Serializable {
 
     @OneToMany(mappedBy = "doubleRandom")
     @JsonIgnore
+    private Set<Task> tasks = new HashSet<>();
+
+    @OneToMany(mappedBy = "doubleRandom")
+    @JsonIgnore
     private Set<DoubleRandomResult> doubleRandomResults = new HashSet<>();
 
     public Long getId() {
@@ -230,6 +234,31 @@ public class DoubleRandom implements Serializable {
 
     public void setDoubleRandomManagerCondition4(String doubleRandomManagerCondition4) {
         this.doubleRandomManagerCondition4 = doubleRandomManagerCondition4;
+    }
+
+    public Set<Task> getTasks() {
+        return tasks;
+    }
+
+    public DoubleRandom tasks(Set<Task> tasks) {
+        this.tasks = tasks;
+        return this;
+    }
+
+    public DoubleRandom addTask(Task task) {
+        tasks.add(task);
+        task.setDoubleRandom(this);
+        return this;
+    }
+
+    public DoubleRandom removeTask(Task task) {
+        tasks.remove(task);
+        task.setDoubleRandom(null);
+        return this;
+    }
+
+    public void setTasks(Set<Task> tasks) {
+        this.tasks = tasks;
     }
 
     public Set<DoubleRandomResult> getDoubleRandomResults() {

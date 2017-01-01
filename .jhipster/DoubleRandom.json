@@ -3,6 +3,12 @@
     "relationships": [
         {
             "relationshipType": "one-to-many",
+            "relationshipName": "task",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "doubleRandom"
+        },
+        {
+            "relationshipType": "one-to-many",
             "relationshipName": "doubleRandomResult",
             "otherEntityName": "doubleRandomResult",
             "otherEntityRelationshipName": "doubleRandom"

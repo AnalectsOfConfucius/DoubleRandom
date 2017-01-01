@@ -2,9 +2,9 @@
 
 describe('Controller Tests', function() {
 
-    describe('DoubleRandom Management Detail Controller', function() {
+    describe('Task Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockPreviousState, MockDoubleRandom, MockTask, MockDoubleRandomResult;
+        var MockEntity, MockPreviousState, MockTask, MockDoubleRandom;
         var createController;
 
         beforeEach(inject(function($injector) {
@@ -12,9 +12,8 @@ describe('Controller Tests', function() {
             $scope = $rootScope.$new();
             MockEntity = jasmine.createSpy('MockEntity');
             MockPreviousState = jasmine.createSpy('MockPreviousState');
-            MockDoubleRandom = jasmine.createSpy('MockDoubleRandom');
             MockTask = jasmine.createSpy('MockTask');
-            MockDoubleRandomResult = jasmine.createSpy('MockDoubleRandomResult');
+            MockDoubleRandom = jasmine.createSpy('MockDoubleRandom');
             
 
             var locals = {
@@ -22,19 +21,18 @@ describe('Controller Tests', function() {
                 '$rootScope': $rootScope,
                 'entity': MockEntity,
                 'previousState': MockPreviousState,
-                'DoubleRandom': MockDoubleRandom,
                 'Task': MockTask,
-                'DoubleRandomResult': MockDoubleRandomResult
+                'DoubleRandom': MockDoubleRandom
             };
             createController = function() {
-                $injector.get('$controller')("DoubleRandomDetailController", locals);
+                $injector.get('$controller')("TaskDetailController", locals);
             };
         }));
 
 
         describe('Root Scope Listening', function() {
             it('Unregisters root scope listener upon scope destruction', function() {
-                var eventType = 'doubleRandomApp:doubleRandomUpdate';
+                var eventType = 'doubleRandomApp:taskUpdate';
 
                 createController();
                 expect($rootScope.$$listenerCount[eventType]).toEqual(1);
