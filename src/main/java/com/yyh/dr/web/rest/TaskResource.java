@@ -2,8 +2,7 @@ package com.yyh.dr.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.yyh.dr.domain.Task;
-
-import com.yyh.dr.repository.TaskRepository;
+import com.yyh.dr.service.TaskService;
 import com.yyh.dr.web.rest.util.HeaderUtil;
 
 import org.slf4j.Logger;
@@ -30,7 +29,7 @@ public class TaskResource {
     private final Logger log = LoggerFactory.getLogger(TaskResource.class);
         
     @Inject
-    private TaskRepository taskRepository;
+    private TaskService taskService;
 
     /**
      * POST  /tasks : Create a new task.
@@ -46,7 +45,7 @@ public class TaskResource {
         if (task.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("task", "idexists", "A new task cannot already have an ID")).body(null);
         }
-        Task result = taskRepository.save(task);
+        Task result = taskService.save(task);
         return ResponseEntity.created(new URI("/api/tasks/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("task", result.getId().toString()))
             .body(result);
@@ -68,7 +67,7 @@ public class TaskResource {
         if (task.getId() == null) {
             return createTask(task);
         }
-        Task result = taskRepository.save(task);
+        Task result = taskService.save(task);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("task", task.getId().toString()))
             .body(result);
@@ -83,8 +82,7 @@ public class TaskResource {
     @Timed
     public List<Task> getAllTasks() {
         log.debug("REST request to get all Tasks");
-        List<Task> tasks = taskRepository.findAll();
-        return tasks;
+        return taskService.findAll();
     }
 
     /**
@@ -97,7 +95,7 @@ public class TaskResource {
     @Timed
     public ResponseEntity<Task> getTask(@PathVariable Long id) {
         log.debug("REST request to get Task : {}", id);
-        Task task = taskRepository.findOne(id);
+        Task task = taskService.findOne(id);
         return Optional.ofNullable(task)
             .map(result -> new ResponseEntity<>(
                 result,
@@ -115,7 +113,7 @@ public class TaskResource {
     @Timed
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         log.debug("REST request to delete Task : {}", id);
-        taskRepository.delete(id);
+        taskService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("task", id.toString())).build();
     }
 

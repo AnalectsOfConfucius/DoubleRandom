@@ -109,3 +109,5 @@ relationship OneToOne {
 }
 
 service Manager with serviceClass
+
+service Task with serviceClass

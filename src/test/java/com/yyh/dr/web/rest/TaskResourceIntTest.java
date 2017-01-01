@@ -4,6 +4,7 @@ import com.yyh.dr.DoubleRandomApp;
 
 import com.yyh.dr.domain.Task;
 import com.yyh.dr.repository.TaskRepository;
+import com.yyh.dr.service.TaskService;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -44,6 +45,9 @@ public class TaskResourceIntTest {
     private TaskRepository taskRepository;
 
     @Inject
+    private TaskService taskService;
+
+    @Inject
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
 
     @Inject
@@ -60,7 +64,7 @@ public class TaskResourceIntTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         TaskResource taskResource = new TaskResource();
-        ReflectionTestUtils.setField(taskResource, "taskRepository", taskRepository);
+        ReflectionTestUtils.setField(taskResource, "taskService", taskService);
         this.restTaskMockMvc = MockMvcBuilders.standaloneSetup(taskResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setMessageConverters(jacksonMessageConverter).build();
@@ -180,7 +184,8 @@ public class TaskResourceIntTest {
     @Transactional
     public void updateTask() throws Exception {
         // Initialize the database
-        taskRepository.saveAndFlush(task);
+        taskService.save(task);
+
         int databaseSizeBeforeUpdate = taskRepository.findAll().size();
 
         // Update the task
@@ -222,7 +227,8 @@ public class TaskResourceIntTest {
     @Transactional
     public void deleteTask() throws Exception {
         // Initialize the database
-        taskRepository.saveAndFlush(task);
+        taskService.save(task);
+
         int databaseSizeBeforeDelete = taskRepository.findAll().size();
 
         // Get the task
