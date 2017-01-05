@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('UserManagementDeleteController', UserManagementDeleteController);
 
     UserManagementDeleteController.$inject = ['$uibModalInstance', 'entity', 'User'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .filter('capitalize', capitalize);
 
     function capitalize() {

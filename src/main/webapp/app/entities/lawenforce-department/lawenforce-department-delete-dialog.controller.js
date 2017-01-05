@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('LawenforceDepartmentDeleteController',LawenforceDepartmentDeleteController);
 
     LawenforceDepartmentDeleteController.$inject = ['$uibModalInstance', 'entity', 'LawenforceDepartment'];

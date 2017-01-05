@@ -18,7 +18,7 @@ management:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
 spring:
     application:
-        name: DoubleRandom
+        name: dr
     profiles:
         # The commented value for `active` can be replaced with valid Spring profiles to load.
         # Otherwise, it will be filled in by maven when building the WAR file
@@ -67,10 +67,10 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: DoubleRandom@localhost
+        from: dr@localhost
     swagger:
-        title: DoubleRandom API
-        description: DoubleRandom API documentation
+        title: dr API
+        description: dr API documentation
         version: 0.0.1
         termsOfServiceUrl:
         contactName:

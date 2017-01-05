@@ -15,6 +15,6 @@
     };
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .component('jhiItemCount', jhiItemCount);
 })();

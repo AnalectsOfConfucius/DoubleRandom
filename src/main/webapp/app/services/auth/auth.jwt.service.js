@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .factory('AuthServerProvider', AuthServerProvider);
 
     AuthServerProvider.$inject = ['$http', '$localStorage', '$sessionStorage', '$q'];

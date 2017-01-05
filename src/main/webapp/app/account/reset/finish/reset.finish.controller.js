@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('ResetFinishController', ResetFinishController);
 
     ResetFinishController.$inject = ['$stateParams', '$timeout', 'Auth', 'LoginService'];

@@ -1,0 +1,34 @@
+{
+    "drApp": {
+        "doubleRandom" : {
+            "home": {
+                "title": "Double Randoms",
+                "createLabel": "Create a new Double Random",
+                "createOrEditLabel": "Create or edit a Double Random",
+                "search": "Search for Double Random"
+            },
+            "created": "A new Double Random is created with identifier {{ param }}",
+            "updated": "A Double Random is updated with identifier {{ param }}",
+            "deleted": "A Double Random is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Double Random {{ id }}?"
+            },
+            "detail": {
+                "title": "Double Random"
+            },
+            "doubleRandomName": "Double Random Name",
+            "doubleRandomDate": "Double Random Date",
+            "doubleRandomNotary": "Double Random Notary",
+            "doubleRandomCompanyCondition1": "Double Random Company Condition 1",
+            "doubleRandomCompanyCondition2": "Double Random Company Condition 2",
+            "doubleRandomCompanyCondition3": "Double Random Company Condition 3",
+            "doubleRandomCompanyCondition4": "Double Random Company Condition 4",
+            "doubleRandomManagerCondition1": "Double Random Manager Condition 1",
+            "doubleRandomManagerCondition2": "Double Random Manager Condition 2",
+            "doubleRandomManagerCondition3": "Double Random Manager Condition 3",
+            "doubleRandomManagerCondition4": "Double Random Manager Condition 4",
+            "task": "Task",
+            "doubleRandomResult": "Double Random Result"
+        }
+    }
+}

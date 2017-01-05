@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('ManagerController', ManagerController);
 
     ManagerController.$inject = ['$scope', '$state', 'Manager'];

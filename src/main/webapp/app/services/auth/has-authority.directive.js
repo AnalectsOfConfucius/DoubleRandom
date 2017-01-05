@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .directive('hasAuthority', hasAuthority);
 
     hasAuthority.$inject = ['Principal'];

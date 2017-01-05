@@ -1,29 +1,33 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "3.12.2",
-    "baseName": "DoubleRandom",
-    "packageName": "com.yyh.dr",
-    "packageFolder": "com/yyh/dr",
+    "baseName": "dr",
+    "packageName": "com.yyh",
+    "packageFolder": "com/yyh",
     "serverPort": "8080",
     "authenticationType": "jwt",
-    "hibernateCache": "no",
+    "hibernateCache": "ehcache",
     "clusteredHttpSession": false,
     "websocket": false,
     "databaseType": "sql",
-    "devDatabaseType": "h2Disk",
-    "prodDatabaseType": "mysql",
+    "devDatabaseType": "mariadb",
+    "prodDatabaseType": "mariadb",
     "searchEngine": false,
     "messageBroker": false,
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "5da9a7ed3f9ebe7e0186ab52c56f6c460d7f0912",
+    "jwtSecretKey": "432d494651256c189e86966fcf15e1e1677556c4",
     "useSass": false,
     "applicationType": "monolith",
     "testFrameworks": [
       "gatling"
     ],
     "jhiPrefix": "jhi",
-    "enableTranslation": false,
+    "enableTranslation": true,
+    "nativeLanguage": "zh-cn",
+    "languages": [
+      "zh-cn"
+    ],
     "serviceDiscoveryType": false
   }
 }

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('TaskDeleteController',TaskDeleteController);
 
     TaskDeleteController.$inject = ['$uibModalInstance', 'entity', 'Task'];

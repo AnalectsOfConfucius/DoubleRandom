@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('JhiConfigurationController', JhiConfigurationController);
 
     JhiConfigurationController.$inject = ['$filter','JhiConfigurationService'];

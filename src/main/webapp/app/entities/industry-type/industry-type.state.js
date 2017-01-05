@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/industry-type',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'IndustryTypes'
+                pageTitle: 'drApp.industryType.home.title'
             },
             views: {
                 'content@': {
@@ -24,6 +24,11 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('industryType');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
             }
         })
         .state('industry-type-detail', {
@@ -31,7 +36,7 @@
             url: '/industry-type/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'IndustryType'
+                pageTitle: 'drApp.industryType.detail.title'
             },
             views: {
                 'content@': {
@@ -41,6 +46,10 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('industryType');
+                    return $translate.refresh();
+                }],
                 entity: ['$stateParams', 'IndustryType', function($stateParams, IndustryType) {
                     return IndustryType.get({id : $stateParams.id}).$promise;
                 }],

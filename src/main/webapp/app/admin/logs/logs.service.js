@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .factory('LogsService', LogsService);
 
     LogsService.$inject = ['$resource'];

@@ -115,7 +115,7 @@
             "fieldValidateRulesMaxlength": 64
         }
     ],
-    "changelogDate": "20161231104530",
+    "changelogDate": "20170105054125",
     "entityTableName": "double_random",
     "dto": "no",
     "pagination": "no",

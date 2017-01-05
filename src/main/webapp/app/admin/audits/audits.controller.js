@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('AuditsController', AuditsController);
 
     AuditsController.$inject = ['$filter', 'AuditsService', 'ParseLinks'];

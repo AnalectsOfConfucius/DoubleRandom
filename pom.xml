@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -9,11 +10,11 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.yyh.dr</groupId>
-    <artifactId>double-random</artifactId>
+    <groupId>com.yyh</groupId>
+    <artifactId>dr</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Double Random</name>
+    <name>Dr</name>
 
     <prerequisites>
         <maven>3.0.0</maven>
@@ -33,7 +34,9 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <jcache.version>1.0.0</jcache.version>
         <javax.inject.version>1</javax.inject.version>
+        <mariadb.version>1.4.4</mariadb.version>
         <liquibase.version>3.5.3</liquibase.version>
         <liquibase-slf4j.version>2.0.0</liquibase-slf4j.version>
         <liquibase-hibernate5.version>3.6</liquibase-hibernate5.version>
@@ -53,26 +56,37 @@
         <project.testresult.directory>${project.build.directory}/test-results</project.testresult.directory>
         <sonar-maven-plugin.version>3.2</sonar-maven-plugin.version>
         <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
-        <sonar.exclusions>src/main/webapp/content/**/*.*, src/main/webapp/bower_components/**/*.*, src/main/webapp/i18n/*.js, target/www/**/*.*</sonar.exclusions>
+        <sonar.exclusions>src/main/webapp/content/**/*.*, src/main/webapp/bower_components/**/*.*,
+            src/main/webapp/i18n/*.js, target/www/**/*.*
+        </sonar.exclusions>
 
-        <sonar.issue.ignore.multicriteria>S3437,UndocumentedApi,BoldAndItalicTagsCheck</sonar.issue.ignore.multicriteria>
+        <sonar.issue.ignore.multicriteria>S3437,UndocumentedApi,BoldAndItalicTagsCheck
+        </sonar.issue.ignore.multicriteria>
 
         <!-- Rule https://sonarqube.com/coding_rules#rule_key=squid%3AS3437 is ignored, as a JPA-managed field cannot be transient -->
         <sonar.issue.ignore.multicriteria.S3437.ruleKey>squid:S3437</sonar.issue.ignore.multicriteria.S3437.ruleKey>
-        <sonar.issue.ignore.multicriteria.S3437.resourceKey>src/main/java/**/*</sonar.issue.ignore.multicriteria.S3437.resourceKey>
+        <sonar.issue.ignore.multicriteria.S3437.resourceKey>src/main/java/**/*
+        </sonar.issue.ignore.multicriteria.S3437.resourceKey>
         <!-- Rule http://sonarqube.com/coding_rules#rule_key=squid%3AUndocumentedApi is ignored, as we want to follow "clean code" guidelines and classes, methods and arguments names should be self-explanatory -->
-        <sonar.issue.ignore.multicriteria.UndocumentedApi.ruleKey>squid:UndocumentedApi</sonar.issue.ignore.multicriteria.UndocumentedApi.ruleKey>
-        <sonar.issue.ignore.multicriteria.UndocumentedApi.resourceKey>src/main/java/**/*</sonar.issue.ignore.multicriteria.UndocumentedApi.resourceKey>
+        <sonar.issue.ignore.multicriteria.UndocumentedApi.ruleKey>squid:UndocumentedApi
+        </sonar.issue.ignore.multicriteria.UndocumentedApi.ruleKey>
+        <sonar.issue.ignore.multicriteria.UndocumentedApi.resourceKey>src/main/java/**/*
+        </sonar.issue.ignore.multicriteria.UndocumentedApi.resourceKey>
         <!-- Rule https://sonarqube.com/coding_rules#rule_key=Web%3ABoldAndItalicTagsCheck is ignored. Even if we agree that using the "i" tag is an awful practice, this is what is recommended by http://fontawesome.io/examples/ -->
-        <sonar.issue.ignore.multicriteria.BoldAndItalicTagsCheck.ruleKey>Web:BoldAndItalicTagsCheck</sonar.issue.ignore.multicriteria.BoldAndItalicTagsCheck.ruleKey>
-        <sonar.issue.ignore.multicriteria.BoldAndItalicTagsCheck.resourceKey>src/main/webapp/app/**/*.*</sonar.issue.ignore.multicriteria.BoldAndItalicTagsCheck.resourceKey>
+        <sonar.issue.ignore.multicriteria.BoldAndItalicTagsCheck.ruleKey>Web:BoldAndItalicTagsCheck
+        </sonar.issue.ignore.multicriteria.BoldAndItalicTagsCheck.ruleKey>
+        <sonar.issue.ignore.multicriteria.BoldAndItalicTagsCheck.resourceKey>src/main/webapp/app/**/*.*
+        </sonar.issue.ignore.multicriteria.BoldAndItalicTagsCheck.resourceKey>
 
         <sonar.java.codeCoveragePlugin>jacoco</sonar.java.codeCoveragePlugin>
-        <sonar.jacoco.itReportPath>${project.testresult.directory}/coverage/jacoco/jacoco-it.exec</sonar.jacoco.itReportPath>
+        <sonar.jacoco.itReportPath>${project.testresult.directory}/coverage/jacoco/jacoco-it.exec
+        </sonar.jacoco.itReportPath>
         <sonar.jacoco.reportPath>${project.testresult.directory}/coverage/jacoco/jacoco.exec</sonar.jacoco.reportPath>
 
-        <sonar.javascript.jstestdriver.reportsPath>${project.testresult.directory}/karma</sonar.javascript.jstestdriver.reportsPath>
-        <sonar.javascript.lcov.reportPath>${project.testresult.directory}/coverage/report-lcov/lcov.info</sonar.javascript.lcov.reportPath>
+        <sonar.javascript.jstestdriver.reportsPath>${project.testresult.directory}/karma
+        </sonar.javascript.jstestdriver.reportsPath>
+        <sonar.javascript.lcov.reportPath>${project.testresult.directory}/coverage/report-lcov/lcov.info
+        </sonar.javascript.lcov.reportPath>
 
         <sonar.sources>${project.basedir}/src/main/</sonar.sources>
         <sonar.surefire.reportsPath>${project.testresult.directory}/surefire-reports</sonar.surefire.reportsPath>
@@ -162,6 +176,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.jayway.awaitility</groupId>
@@ -248,19 +263,34 @@
             <version>1.1.2</version>
         </dependency>
         <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+            <version>${jcache.version}</version>
+        </dependency>
+        <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>${javax.inject.version}</version>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>${mariadb.version}</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj-core.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jcache</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -391,6 +421,16 @@
             <artifactId>spring-security-data</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.14</version>
+        </dependency> <!-- ooxml -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.14</version>
+        </dependency>
     </dependencies>
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
@@ -471,11 +511,14 @@
                 <configuration>
                     <rules>
                         <requireMavenVersion>
-                            <message>You are running an older version of Maven. JHipster requires at least Maven 3.0</message>
+                            <message>You are running an older version of Maven. JHipster requires at least Maven 3.0
+                            </message>
                             <version>[3.0.0,)</version>
                         </requireMavenVersion>
                         <requireJavaVersion>
-                            <message>You are running an older version of Java. JHipster requires at least JDK ${java.version}</message>
+                            <message>You are running an older version of Java. JHipster requires at least JDK
+                                ${java.version}
+                            </message>
                             <version>[${java.version}.0,)</version>
                         </requireJavaVersion>
                     </rules>
@@ -568,13 +611,15 @@
                 <version>${liquibase.version}</version>
                 <configuration>
                     <changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
-                    <diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
-                    <driver>org.h2.Driver</driver>
-                    <url>jdbc:h2:file:./target/h2db/db/doublerandom</url>
+                    <diffChangeLogFile>
+                        src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml
+                    </diffChangeLogFile>
+                    <driver>org.mariadb.jdbc.Driver</driver>
+                    <url>jdbc:mariadb://localhost:3306/dr</url>
                     <defaultSchemaName></defaultSchemaName>
-                    <username>DoubleRandom</username>
+                    <username></username>
                     <password></password>
-                    <referenceUrl>hibernate:spring:com.yyh.dr.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
+                    <referenceUrl>hibernate:spring:com.yyh.domain?dialect=org.hibernate.dialect.MySQL5InnoDBDialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
                 </configuration>
@@ -618,7 +663,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.10</version>
                 <configuration>
-                    <imageName>doublerandom</imageName>
+                    <imageName>dr</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
                         <resource>
@@ -682,7 +727,7 @@
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
-             </plugins>
+            </plugins>
         </pluginManagement>
     </build>
     <profiles>

@@ -1,26 +1,26 @@
 
 <div>
-    <h2><span>Double Random Result</span> {{vm.doubleRandomResult.id}}</h2>
+    <h2><span data-translate="drApp.doubleRandomResult.detail.title">Double Random Result</span> {{vm.doubleRandomResult.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span>Company Name</span></dt>
+        <dt><span data-translate="drApp.doubleRandomResult.companyName">Company Name</span></dt>
         <dd>
             <span>{{vm.doubleRandomResult.companyName}}</span>
         </dd>
-        <dt><span>Company Register Id</span></dt>
+        <dt><span data-translate="drApp.doubleRandomResult.companyRegisterId">Company Register Id</span></dt>
         <dd>
             <span>{{vm.doubleRandomResult.companyRegisterId}}</span>
         </dd>
-        <dt><span>People</span></dt>
+        <dt><span data-translate="drApp.doubleRandomResult.people">People</span></dt>
         <dd>
             <span>{{vm.doubleRandomResult.people}}</span>
         </dd>
-        <dt><span>Task</span></dt>
+        <dt><span data-translate="drApp.doubleRandomResult.task">Task</span></dt>
         <dd>
             <span>{{vm.doubleRandomResult.task}}</span>
         </dd>
-        <dt><span>Double Random</span></dt>
+        <dt><span data-translate="drApp.doubleRandomResult.doubleRandom">Double Random</span></dt>
         <dd>
             <a ui-sref="double-random-detail({id:vm.doubleRandomResult.doubleRandom.id})">{{vm.doubleRandomResult.doubleRandom.id}}</a>
         </dd>
@@ -29,11 +29,11 @@
     <button type="submit"
             ui-sref="{{ vm.previousState }}"
             class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
     </button>
 
     <button type="button" ui-sref="double-random-result-detail.edit({id:vm.doubleRandomResult.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-xs hidden-sm"> Edit</span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
     </button>
 </div>

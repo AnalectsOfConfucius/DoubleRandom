@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -11,10 +11,10 @@
         $stateProvider
         .state('company', {
             parent: 'entity',
-            url: '/company',
+            url: '/company?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Companies'
+                pageTitle: 'drApp.company.home.title'
             },
             views: {
                 'content@': {
@@ -23,7 +23,32 @@
                     controllerAs: 'vm'
                 }
             },
+            params: {
+                page: {
+                    value: '1',
+                    squash: true
+                },
+                sort: {
+                    value: 'id,asc',
+                    squash: true
+                },
+                search: null
+            },
             resolve: {
+                pagingParams: ['$stateParams', 'PaginationUtil', function ($stateParams, PaginationUtil) {
+                    return {
+                        page: PaginationUtil.parsePage($stateParams.page),
+                        sort: $stateParams.sort,
+                        predicate: PaginationUtil.parsePredicate($stateParams.sort),
+                        ascending: PaginationUtil.parseAscending($stateParams.sort),
+                        search: $stateParams.search
+                    };
+                }],
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('company');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
             }
         })
         .state('company-detail', {
@@ -31,7 +56,7 @@
             url: '/company/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Company'
+                pageTitle: 'drApp.company.detail.title'
             },
             views: {
                 'content@': {
@@ -41,6 +66,10 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('company');
+                    return $translate.refresh();
+                }],
                 entity: ['$stateParams', 'Company', function($stateParams, Company) {
                     return Company.get({id : $stateParams.id}).$promise;
                 }],

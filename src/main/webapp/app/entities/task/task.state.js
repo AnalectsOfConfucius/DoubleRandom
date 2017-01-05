@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/task',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Tasks'
+                pageTitle: 'drApp.task.home.title'
             },
             views: {
                 'content@': {
@@ -24,6 +24,11 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('task');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
             }
         })
         .state('task-detail', {
@@ -31,7 +36,7 @@
             url: '/task/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Task'
+                pageTitle: 'drApp.task.detail.title'
             },
             views: {
                 'content@': {
@@ -41,6 +46,10 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('task');
+                    return $translate.refresh();
+                }],
                 entity: ['$stateParams', 'Task', function($stateParams, Task) {
                     return Task.get({id : $stateParams.id}).$promise;
                 }],

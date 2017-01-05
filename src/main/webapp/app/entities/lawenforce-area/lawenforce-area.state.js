@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/lawenforce-area',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'LawenforceAreas'
+                pageTitle: 'drApp.lawenforceArea.home.title'
             },
             views: {
                 'content@': {
@@ -24,6 +24,11 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('lawenforceArea');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
             }
         })
         .state('lawenforce-area-detail', {
@@ -31,7 +36,7 @@
             url: '/lawenforce-area/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'LawenforceArea'
+                pageTitle: 'drApp.lawenforceArea.detail.title'
             },
             views: {
                 'content@': {
@@ -41,6 +46,10 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('lawenforceArea');
+                    return $translate.refresh();
+                }],
                 entity: ['$stateParams', 'LawenforceArea', function($stateParams, LawenforceArea) {
                     return LawenforceArea.get({id : $stateParams.id}).$promise;
                 }],

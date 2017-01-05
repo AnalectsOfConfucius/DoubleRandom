@@ -1,10 +1,10 @@
 
 <div>
-    <h2><span>Lawenforce Area</span> {{vm.lawenforceArea.id}}</h2>
+    <h2><span data-translate="drApp.lawenforceArea.detail.title">Lawenforce Area</span> {{vm.lawenforceArea.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span>Area Name</span></dt>
+        <dt><span data-translate="drApp.lawenforceArea.areaName">Area Name</span></dt>
         <dd>
             <span>{{vm.lawenforceArea.areaName}}</span>
         </dd>
@@ -13,11 +13,11 @@
     <button type="submit"
             ui-sref="{{ vm.previousState }}"
             class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
     </button>
 
     <button type="button" ui-sref="lawenforce-area-detail.edit({id:vm.lawenforceArea.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-xs hidden-sm"> Edit</span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
     </button>
 </div>

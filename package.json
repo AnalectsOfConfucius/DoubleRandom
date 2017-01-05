@@ -1,7 +1,7 @@
 {
-  "name": "double-random",
+  "name": "dr",
   "version": "0.0.0",
-  "description": "Description for DoubleRandom",
+  "description": "Description for dr",
   "private": true,
   "cacheDirectories": [
     "node_modules",

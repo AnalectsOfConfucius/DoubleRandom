@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('doubleRandomApp')
+    angular.module('drApp')
         .controller('HealthModalController', HealthModalController);
 
     HealthModalController.$inject = ['$uibModalInstance', 'currentHealth', 'baseName', 'subSystemName'];

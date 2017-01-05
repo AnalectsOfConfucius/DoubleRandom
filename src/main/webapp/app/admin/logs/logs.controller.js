@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('LogsController', LogsController);
 
     LogsController.$inject = ['LogsService'];

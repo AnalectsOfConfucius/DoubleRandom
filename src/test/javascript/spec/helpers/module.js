@@ -1,4 +1,4 @@
-beforeEach(module('doubleRandomApp'));
+beforeEach(module('drApp'));
 /**
  * returns a function whose angular will be replaced
  * with whatever mock was supplied.

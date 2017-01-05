@@ -103,7 +103,7 @@
             "fieldValidateRulesMaxlength": 4069
         }
     ],
-    "changelogDate": "20161231104524",
+    "changelogDate": "20170105054119",
     "entityTableName": "manager",
     "dto": "no",
     "pagination": "no",

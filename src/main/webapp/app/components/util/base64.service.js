@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .factory('Base64', Base64);
 
     function Base64 () {

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('DoubleRandomController', DoubleRandomController);
 
     DoubleRandomController.$inject = ['$scope', '$state', 'DoubleRandom'];

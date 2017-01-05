@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('LawenforceDepartmentDetailController', LawenforceDepartmentDetailController);
 
     LawenforceDepartmentDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'LawenforceDepartment', 'Company', 'Manager'];
@@ -13,7 +13,7 @@
         vm.lawenforceDepartment = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('doubleRandomApp:lawenforceDepartmentUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('drApp:lawenforceDepartmentUpdate', function(event, result) {
             vm.lawenforceDepartment = result;
         });
         $scope.$on('$destroy', unsubscribe);

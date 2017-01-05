@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(localStorageConfig);
 
     localStorageConfig.$inject = ['$localStorageProvider', '$sessionStorageProvider'];

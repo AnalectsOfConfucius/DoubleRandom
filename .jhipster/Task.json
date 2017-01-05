@@ -19,7 +19,7 @@
             "fieldValidateRulesMaxlength": 1024
         }
     ],
-    "changelogDate": "20170101111719",
+    "changelogDate": "20170105061206",
     "entityTableName": "task",
     "dto": "no",
     "pagination": "no",

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns='http://www.ehcache.org/v3'
+         xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
+
+    <cache-template name="simple">
+        <expiry>
+            <ttl unit="seconds">3600</ttl>
+        </expiry>
+        <heap>100</heap>
+    </cache-template>
+
+    <cache alias="com.yyh.domain.User" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.Authority" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.User.authorities" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.PersistentToken" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.User.persistentTokens" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.Manager" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.Manager.doubleRandomResults" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.Manager.managerLawenforceAreas" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.LawenforceDepartment" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.LawenforceDepartment.companies" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.LawenforceDepartment.managers" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.LawenforceArea" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.LawenforceArea.companies" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.LawenforceArea.managers" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.Company" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.CompanyType" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.CompanyType.companies" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.IndustryType" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.IndustryType.companies" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.DoubleRandom" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.DoubleRandom.tasks" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.DoubleRandom.doubleRandomResults" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.DoubleRandomResult" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.DoubleRandomResult.managers" uses-template="simple"/>
+
+    <cache alias="com.yyh.domain.Task" uses-template="simple"/>
+
+    <!-- jhipster-needle-ehcache-add-entry -->
+</config>

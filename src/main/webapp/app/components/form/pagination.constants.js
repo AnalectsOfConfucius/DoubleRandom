@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .constant('paginationConstants', {
             'itemsPerPage': 20
         });

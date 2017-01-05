@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .factory('CompanyType', CompanyType);
 
     CompanyType.$inject = ['$resource'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('TaskDetailController', TaskDetailController);
 
     TaskDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Task', 'DoubleRandom'];
@@ -13,7 +13,7 @@
         vm.task = entity;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('doubleRandomApp:taskUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('drApp:taskUpdate', function(event, result) {
             vm.task = result;
         });
         $scope.$on('$destroy', unsubscribe);

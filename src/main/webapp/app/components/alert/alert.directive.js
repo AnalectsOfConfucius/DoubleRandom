@@ -11,7 +11,7 @@
     };
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .component('jhiAlert', jhiAlert);
 
     jhiAlertController.$inject = ['$scope', 'AlertService'];

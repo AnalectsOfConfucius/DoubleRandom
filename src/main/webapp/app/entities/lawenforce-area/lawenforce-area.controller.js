@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('LawenforceAreaController', LawenforceAreaController);
 
     LawenforceAreaController.$inject = ['$scope', '$state', 'LawenforceArea'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('LawenforceDepartmentDialogController', LawenforceDepartmentDialogController);
 
     LawenforceDepartmentDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'LawenforceDepartment', 'Company', 'Manager'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('doubleRandomApp:lawenforceDepartmentUpdate', result);
+            $scope.$emit('drApp:lawenforceDepartmentUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

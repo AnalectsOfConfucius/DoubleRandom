@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .factory('LawenforceArea', LawenforceArea);
 
     LawenforceArea.$inject = ['$resource'];

@@ -1,12 +1,12 @@
 <div>
-    <h2>Industry Types</h2>
+    <h2 data-translate="drApp.industryType.home.title">Industry Types</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="industry-type.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span >
+                    <span  data-translate="drApp.industryType.home.createLabel">
                         Create new Industry Type
                     </span>
                 </button>
@@ -18,8 +18,8 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
-                    <th><span>ID</span></th>
-                    <th><span>Type Name</span></th>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="drApp.industryType.typeName">Type Name</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -33,19 +33,19 @@
                                     ui-sref="industry-type-detail({id:industryType.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="industry-type.edit({id:industryType.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="industry-type.delete({id:industryType.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
                             </button>
                         </div>
                     </td>

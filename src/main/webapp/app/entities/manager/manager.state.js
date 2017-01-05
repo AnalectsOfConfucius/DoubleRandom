@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/manager',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Managers'
+                pageTitle: 'drApp.manager.home.title'
             },
             views: {
                 'content@': {
@@ -24,6 +24,11 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('manager');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
             }
         })
         .state('manager-detail', {
@@ -31,7 +36,7 @@
             url: '/manager/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Manager'
+                pageTitle: 'drApp.manager.detail.title'
             },
             views: {
                 'content@': {
@@ -41,6 +46,10 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('manager');
+                    return $translate.refresh();
+                }],
                 entity: ['$stateParams', 'Manager', function($stateParams, Manager) {
                     return Manager.get({id : $stateParams.id}).$promise;
                 }],

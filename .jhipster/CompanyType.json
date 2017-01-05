@@ -19,7 +19,7 @@
             "fieldValidateRulesMaxlength": 32
         }
     ],
-    "changelogDate": "20161231104528",
+    "changelogDate": "20170105054123",
     "entityTableName": "company_type",
     "dto": "no",
     "pagination": "no",

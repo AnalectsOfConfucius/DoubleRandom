@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('UserManagementDetailController', UserManagementDetailController);
 
     UserManagementDetailController.$inject = ['$stateParams', 'User'];

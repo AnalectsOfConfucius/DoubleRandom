@@ -1,12 +1,12 @@
 <div>
-    <h2>Double Randoms</h2>
+    <h2 data-translate="drApp.doubleRandom.home.title">Double Randoms</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="double-random.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span >
+                    <span  data-translate="drApp.doubleRandom.home.createLabel">
                         Create new Double Random
                     </span>
                 </button>
@@ -18,18 +18,18 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
-                    <th><span>ID</span></th>
-                    <th><span>Double Random Name</span></th>
-                    <th><span>Double Random Date</span></th>
-                    <th><span>Double Random Notary</span></th>
-                    <th><span>Double Random Company Condition 1</span></th>
-                    <th><span>Double Random Company Condition 2</span></th>
-                    <th><span>Double Random Company Condition 3</span></th>
-                    <th><span>Double Random Company Condition 4</span></th>
-                    <th><span>Double Random Manager Condition 1</span></th>
-                    <th><span>Double Random Manager Condition 2</span></th>
-                    <th><span>Double Random Manager Condition 3</span></th>
-                    <th><span>Double Random Manager Condition 4</span></th>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomName">Double Random Name</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomDate">Double Random Date</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomNotary">Double Random Notary</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomCompanyCondition1">Double Random Company Condition 1</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomCompanyCondition2">Double Random Company Condition 2</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomCompanyCondition3">Double Random Company Condition 3</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomCompanyCondition4">Double Random Company Condition 4</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomManagerCondition1">Double Random Manager Condition 1</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomManagerCondition2">Double Random Manager Condition 2</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomManagerCondition3">Double Random Manager Condition 3</span></th>
+                    <th><span data-translate="drApp.doubleRandom.doubleRandomManagerCondition4">Double Random Manager Condition 4</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -53,19 +53,19 @@
                                     ui-sref="double-random-detail({id:doubleRandom.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="double-random.edit({id:doubleRandom.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="double-random.delete({id:doubleRandom.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
                             </button>
                         </div>
                     </td>

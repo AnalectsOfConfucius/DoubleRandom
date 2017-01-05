@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .factory('Principal', Principal);
 
     Principal.$inject = ['$q', 'Account'];

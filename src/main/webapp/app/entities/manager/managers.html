@@ -1,12 +1,12 @@
 <div>
-    <h2>Managers</h2>
+    <h2 data-translate="drApp.manager.home.title">Managers</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="manager.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span >
+                    <span  data-translate="drApp.manager.home.createLabel">
                         Create new Manager
                     </span>
                 </button>
@@ -18,19 +18,19 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
-                    <th><span>ID</span></th>
-                    <th><span>Manager Id</span></th>
-                    <th><span>Manager Name</span></th>
-                    <th><span>Manager Card Id</span></th>
-                    <th><span>Manager Card Type</span></th>
-                    <th><span>Manager Sex</span></th>
-                    <th><span>Manager Flag</span></th>
-                    <th><span>Check Count</span></th>
-                    <th><span>Description</span></th>
-                    <th><span>Manager User</span></th>
-                    <th><span>Manager Lawenforce Department</span></th>
-                    <th><span>Double Random Result</span></th>
-                    <th><span>Manager Lawenforce Area</span></th>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="drApp.manager.managerId">Manager Id</span></th>
+                    <th><span data-translate="drApp.manager.managerName">Manager Name</span></th>
+                    <th><span data-translate="drApp.manager.managerCardId">Manager Card Id</span></th>
+                    <th><span data-translate="drApp.manager.managerCardType">Manager Card Type</span></th>
+                    <th><span data-translate="drApp.manager.managerSex">Manager Sex</span></th>
+                    <th><span data-translate="drApp.manager.managerFlag">Manager Flag</span></th>
+                    <th><span data-translate="drApp.manager.checkCount">Check Count</span></th>
+                    <th><span data-translate="drApp.manager.description">Description</span></th>
+                    <th><span data-translate="drApp.manager.managerUser">Manager User</span></th>
+                    <th><span data-translate="drApp.manager.managerLawenforceDepartment">Manager Lawenforce Department</span></th>
+                    <th><span data-translate="drApp.manager.doubleRandomResult">Double Random Result</span></th>
+                    <th><span data-translate="drApp.manager.managerLawenforceArea">Manager Lawenforce Area</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -67,19 +67,19 @@
                                     ui-sref="manager-detail({id:manager.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="manager.edit({id:manager.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="manager.delete({id:manager.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
                             </button>
                         </div>
                     </td>

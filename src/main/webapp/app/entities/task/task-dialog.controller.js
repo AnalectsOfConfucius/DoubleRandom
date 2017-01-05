@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('TaskDialogController', TaskDialogController);
 
     TaskDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Task', 'DoubleRandom'];
@@ -33,7 +33,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('doubleRandomApp:taskUpdate', result);
+            $scope.$emit('drApp:taskUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

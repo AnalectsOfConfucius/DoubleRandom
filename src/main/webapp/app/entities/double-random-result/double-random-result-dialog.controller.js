@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('DoubleRandomResultDialogController', DoubleRandomResultDialogController);
 
     DoubleRandomResultDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'DoubleRandomResult', 'DoubleRandom', 'Manager'];
@@ -34,7 +34,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('doubleRandomApp:doubleRandomResultUpdate', result);
+            $scope.$emit('drApp:doubleRandomResultUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

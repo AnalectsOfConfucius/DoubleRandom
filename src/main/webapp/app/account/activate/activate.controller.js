@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('ActivationController', ActivationController);
 
     ActivationController.$inject = ['$stateParams', 'Auth', 'LoginService'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/double-random-result',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'DoubleRandomResults'
+                pageTitle: 'drApp.doubleRandomResult.home.title'
             },
             views: {
                 'content@': {
@@ -24,6 +24,11 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('doubleRandomResult');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
             }
         })
         .state('double-random-result-detail', {
@@ -31,7 +36,7 @@
             url: '/double-random-result/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'DoubleRandomResult'
+                pageTitle: 'drApp.doubleRandomResult.detail.title'
             },
             views: {
                 'content@': {
@@ -41,6 +46,10 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('doubleRandomResult');
+                    return $translate.refresh();
+                }],
                 entity: ['$stateParams', 'DoubleRandomResult', function($stateParams, DoubleRandomResult) {
                     return DoubleRandomResult.get({id : $stateParams.id}).$promise;
                 }],

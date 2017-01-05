@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/lawenforce-department',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'LawenforceDepartments'
+                pageTitle: 'drApp.lawenforceDepartment.home.title'
             },
             views: {
                 'content@': {
@@ -24,6 +24,11 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('lawenforceDepartment');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
             }
         })
         .state('lawenforce-department-detail', {
@@ -31,7 +36,7 @@
             url: '/lawenforce-department/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'LawenforceDepartment'
+                pageTitle: 'drApp.lawenforceDepartment.detail.title'
             },
             views: {
                 'content@': {
@@ -41,6 +46,10 @@
                 }
             },
             resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('lawenforceDepartment');
+                    return $translate.refresh();
+                }],
                 entity: ['$stateParams', 'LawenforceDepartment', function($stateParams, LawenforceDepartment) {
                     return LawenforceDepartment.get({id : $stateParams.id}).$promise;
                 }],

@@ -1,7 +1,7 @@
 version: '2'
 services:
-    doublerandom-sonar:
-        container_name: doublerandom-sonar
+    dr-sonar:
+        container_name: dr-sonar
         image: sonarqube:6.1-alpine
         ports:
             - 9000:9000

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('CompanyTypeDialogController', CompanyTypeDialogController);
 
     CompanyTypeDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'CompanyType', 'Company'];
@@ -33,7 +33,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('doubleRandomApp:companyTypeUpdate', result);
+            $scope.$emit('drApp:companyTypeUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

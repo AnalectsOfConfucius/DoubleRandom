@@ -34,7 +34,7 @@
             "fieldValidateRulesMaxlength": 32
         }
     ],
-    "changelogDate": "20161231104525",
+    "changelogDate": "20170105054120",
     "entityTableName": "lawenforce_department",
     "dto": "no",
     "pagination": "no",

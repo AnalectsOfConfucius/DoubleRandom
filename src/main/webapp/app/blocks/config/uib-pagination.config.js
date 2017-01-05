@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .config(paginationConfig);
 
     paginationConfig.$inject = ['uibPaginationConfig', 'paginationConstants'];

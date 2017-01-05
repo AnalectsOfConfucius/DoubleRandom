@@ -150,9 +150,9 @@
             "fieldValidateRulesMaxlength": 4069
         }
     ],
-    "changelogDate": "20161231104527",
+    "changelogDate": "20170105054122",
     "entityTableName": "company",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "pagination": "pager",
+    "service": "serviceImpl"
 }

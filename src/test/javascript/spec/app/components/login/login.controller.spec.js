@@ -2,7 +2,7 @@
 
 describe('Controller Tests', function () {
 
-    beforeEach(module('doubleRandomApp'));
+    beforeEach(module('drApp'));
 
     describe('LoginController', function () {
         var $scope, authService;

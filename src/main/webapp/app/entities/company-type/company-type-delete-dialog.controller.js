@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('doubleRandomApp')
+        .module('drApp')
         .controller('CompanyTypeDeleteController',CompanyTypeDeleteController);
 
     CompanyTypeDeleteController.$inject = ['$uibModalInstance', 'entity', 'CompanyType'];

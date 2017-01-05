@@ -1,78 +1,78 @@
 
 <div>
-    <h2><span>Company</span> {{vm.company.id}}</h2>
+    <h2><span data-translate="drApp.company.detail.title">Company</span> {{vm.company.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span>Company Name</span></dt>
+        <dt><span data-translate="drApp.company.companyName">Company Name</span></dt>
         <dd>
             <span>{{vm.company.companyName}}</span>
         </dd>
-        <dt><span>Company Register Id</span></dt>
+        <dt><span data-translate="drApp.company.companyRegisterId">Company Register Id</span></dt>
         <dd>
             <span>{{vm.company.companyRegisterId}}</span>
         </dd>
-        <dt><span>Company Capital</span></dt>
+        <dt><span data-translate="drApp.company.companyCapital">Company Capital</span></dt>
         <dd>
             <span>{{vm.company.companyCapital}}</span>
         </dd>
-        <dt><span>Company Address</span></dt>
+        <dt><span data-translate="drApp.company.companyAddress">Company Address</span></dt>
         <dd>
             <span>{{vm.company.companyAddress}}</span>
         </dd>
-        <dt><span>Business Address</span></dt>
+        <dt><span data-translate="drApp.company.businessAddress">Business Address</span></dt>
         <dd>
             <span>{{vm.company.businessAddress}}</span>
         </dd>
-        <dt><span>Business Scope</span></dt>
+        <dt><span data-translate="drApp.company.businessScope">Business Scope</span></dt>
         <dd>
             <span>{{vm.company.businessScope}}</span>
         </dd>
-        <dt><span>Company Owner</span></dt>
+        <dt><span data-translate="drApp.company.companyOwner">Company Owner</span></dt>
         <dd>
             <span>{{vm.company.companyOwner}}</span>
         </dd>
-        <dt><span>Company Date</span></dt>
+        <dt><span data-translate="drApp.company.companyDate">Company Date</span></dt>
         <dd>
             <span>{{vm.company.companyDate}}</span>
         </dd>
-        <dt><span>Company Phone</span></dt>
+        <dt><span data-translate="drApp.company.companyPhone">Company Phone</span></dt>
         <dd>
             <span>{{vm.company.companyPhone}}</span>
         </dd>
-        <dt><span>Check Count</span></dt>
+        <dt><span data-translate="drApp.company.checkCount">Check Count</span></dt>
         <dd>
             <span>{{vm.company.checkCount}}</span>
         </dd>
-        <dt><span>Company Status</span></dt>
+        <dt><span data-translate="drApp.company.companyStatus">Company Status</span></dt>
         <dd>
             <span>{{vm.company.companyStatus}}</span>
         </dd>
-        <dt><span>Last Check Date</span></dt>
+        <dt><span data-translate="drApp.company.lastCheckDate">Last Check Date</span></dt>
         <dd>
             <span>{{vm.company.lastCheckDate}}</span>
         </dd>
-        <dt><span>Abnormal Info</span></dt>
+        <dt><span data-translate="drApp.company.abnormalInfo">Abnormal Info</span></dt>
         <dd>
             <span>{{vm.company.abnormalInfo}}</span>
         </dd>
-        <dt><span>Description</span></dt>
+        <dt><span data-translate="drApp.company.description">Description</span></dt>
         <dd>
             <span>{{vm.company.description}}</span>
         </dd>
-        <dt><span>Company Type</span></dt>
+        <dt><span data-translate="drApp.company.companyType">Company Type</span></dt>
         <dd>
             <a ui-sref="company-type-detail({id:vm.company.companyType.id})">{{vm.company.companyType.id}}</a>
         </dd>
-        <dt><span>Industry Type</span></dt>
+        <dt><span data-translate="drApp.company.industryType">Industry Type</span></dt>
         <dd>
             <a ui-sref="industry-type-detail({id:vm.company.industryType.id})">{{vm.company.industryType.id}}</a>
         </dd>
-        <dt><span>Company Area</span></dt>
+        <dt><span data-translate="drApp.company.companyArea">Company Area</span></dt>
         <dd>
             <a ui-sref="lawenforce-area-detail({id:vm.company.companyArea.id})">{{vm.company.companyArea.id}}</a>
         </dd>
-        <dt><span>Company Supervisory</span></dt>
+        <dt><span data-translate="drApp.company.companySupervisory">Company Supervisory</span></dt>
         <dd>
             <a ui-sref="lawenforce-department-detail({id:vm.company.companySupervisory.id})">{{vm.company.companySupervisory.id}}</a>
         </dd>
@@ -81,11 +81,11 @@
     <button type="submit"
             ui-sref="{{ vm.previousState }}"
             class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
     </button>
 
     <button type="button" ui-sref="company-detail.edit({id:vm.company.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-xs hidden-sm"> Edit</span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
     </button>
 </div>

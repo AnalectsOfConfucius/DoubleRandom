@@ -1,14 +1,14 @@
 
 <div>
-    <h2><span>Lawenforce Department</span> {{vm.lawenforceDepartment.id}}</h2>
+    <h2><span data-translate="drApp.lawenforceDepartment.detail.title">Lawenforce Department</span> {{vm.lawenforceDepartment.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span>Department Name</span></dt>
+        <dt><span data-translate="drApp.lawenforceDepartment.departmentName">Department Name</span></dt>
         <dd>
             <span>{{vm.lawenforceDepartment.departmentName}}</span>
         </dd>
-        <dt><span>Department Address</span></dt>
+        <dt><span data-translate="drApp.lawenforceDepartment.departmentAddress">Department Address</span></dt>
         <dd>
             <span>{{vm.lawenforceDepartment.departmentAddress}}</span>
         </dd>
@@ -17,11 +17,11 @@
     <button type="submit"
             ui-sref="{{ vm.previousState }}"
             class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
     </button>
 
     <button type="button" ui-sref="lawenforce-department-detail.edit({id:vm.lawenforceDepartment.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-xs hidden-sm"> Edit</span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
     </button>
 </div>
