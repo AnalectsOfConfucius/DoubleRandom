@@ -2,6 +2,7 @@ package com.yyh.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.yyh.domain.Company;
+import com.yyh.repository.CompanyRepository;
 import com.yyh.service.CompanyService;
 import com.yyh.web.rest.util.HeaderUtil;
 import com.yyh.web.rest.util.PaginationUtil;
@@ -31,9 +32,26 @@ import java.util.Optional;
 public class CompanyResource {
 
     private final Logger log = LoggerFactory.getLogger(CompanyResource.class);
-        
+
     @Inject
     private CompanyService companyService;
+
+    @Inject
+    private CompanyRepository companyRepository;
+
+    /**
+     * POST  /companies/import : Import company list.
+     *
+     * @return the ResponseEntity with status 201 (Imported), or with status 400 (Bad Request)
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping("/companies/import")
+    @Timed
+    public ResponseEntity<?> importCompany() throws URISyntaxException {
+        List<Company> companyList = companyService.createCompanyList("E:\\市场主体名单(市场主体查询).xls");
+        companyRepository.save(companyList);
+        return ResponseEntity.ok().body("ok");
+    }
 
     /**
      * POST  /companies : Create a new company.

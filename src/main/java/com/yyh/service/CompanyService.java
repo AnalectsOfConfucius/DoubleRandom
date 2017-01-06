@@ -11,6 +11,14 @@ import java.util.List;
 public interface CompanyService {
 
     /**
+     * Create a company list
+     *
+     * @param filepath the file to convert
+     * @return the company list
+     */
+    List<Company> createCompanyList(String filepath);
+
+    /**
      * Save a company.
      *
      * @param company the entity to save
@@ -20,7 +28,7 @@ public interface CompanyService {
 
     /**
      *  Get all the companies.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
