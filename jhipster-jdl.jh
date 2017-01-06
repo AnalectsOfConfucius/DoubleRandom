@@ -114,6 +114,6 @@ service Manager with serviceClass
 
 service Task with serviceClass
 
-service Company with serviceImpl
+service Company with serviceClass
 
 paginate Company with pager
