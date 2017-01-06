@@ -47,14 +47,16 @@ entity DoubleRandom {
 	doubleRandomName String required maxlength(32),
     doubleRandomDate String required maxlength(32),
     doubleRandomNotary String required maxlength(32),
-    doubleRandomCompanyCondition1 String required maxlength(64),
-    doubleRandomCompanyCondition2 String required maxlength(64),
-    doubleRandomCompanyCondition3 String required maxlength(64),
-    doubleRandomCompanyCondition4 String required maxlength(64),
-    doubleRandomManagerCondition1 String required maxlength(64),
-    doubleRandomManagerCondition2 String required maxlength(64),
-    doubleRandomManagerCondition3 String required maxlength(64),
-    doubleRandomManagerCondition4 String required maxlength(64)
+    doubleRandomCompanyName String required maxlength(64),
+    doubleRandomCompanyArea String required maxlength(64),
+    doubleRandomCompanySupervisory String required maxlength(64),
+    doubleRandomCompanyType String required maxlength(64),
+    doubleRandomCompanyIndustryType String required maxlength(64),
+    doubleRandomCompanyRatio String required maxlength(64),
+    doubleRandomManagerName String required maxlength(64),
+    doubleRandomManagerNumber String required maxlength(64),
+    doubleRandomManagerDepartment String required maxlength(64),
+    doubleRandomManagerRatio String required maxlength(64)
 }
 
 entity DoubleRandomResult {

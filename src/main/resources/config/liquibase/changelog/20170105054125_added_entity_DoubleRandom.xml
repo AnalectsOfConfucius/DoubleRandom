@@ -36,35 +36,43 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="double_random_company_condition_1" type="varchar(64)">
+            <column name="double_random_company_name" type="varchar(64)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="double_random_company_condition_2" type="varchar(64)">
+            <column name="double_random_company_area" type="varchar(64)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="double_random_company_condition_3" type="varchar(64)">
+            <column name="double_random_company_supervisory" type="varchar(64)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="double_random_company_condition_4" type="varchar(64)">
+            <column name="double_random_company_type" type="varchar(64)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="double_random_manager_condition_1" type="varchar(64)">
+            <column name="double_random_company_industry_type" type="varchar(64)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="double_random_manager_condition_2" type="varchar(64)">
+            <column name="double_random_company_ratio" type="varchar(64)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="double_random_manager_condition_3" type="varchar(64)">
+            <column name="double_random_manager_name" type="varchar(64)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="double_random_manager_condition_4" type="varchar(64)">
+            <column name="double_random_manager_number" type="varchar(64)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="double_random_manager_department" type="varchar(64)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="double_random_manager_ratio" type="varchar(64)">
                 <constraints nullable="false" />
             </column>
             

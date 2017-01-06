@@ -42,43 +42,53 @@ public class DoubleRandom implements Serializable {
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "double_random_company_condition_1", length = 64, nullable = false)
-    private String doubleRandomCompanyCondition1;
+    @Column(name = "double_random_company_name", length = 64, nullable = false)
+    private String doubleRandomCompanyName;
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "double_random_company_condition_2", length = 64, nullable = false)
-    private String doubleRandomCompanyCondition2;
+    @Column(name = "double_random_company_area", length = 64, nullable = false)
+    private String doubleRandomCompanyArea;
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "double_random_company_condition_3", length = 64, nullable = false)
-    private String doubleRandomCompanyCondition3;
+    @Column(name = "double_random_company_supervisory", length = 64, nullable = false)
+    private String doubleRandomCompanySupervisory;
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "double_random_company_condition_4", length = 64, nullable = false)
-    private String doubleRandomCompanyCondition4;
+    @Column(name = "double_random_company_type", length = 64, nullable = false)
+    private String doubleRandomCompanyType;
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "double_random_manager_condition_1", length = 64, nullable = false)
-    private String doubleRandomManagerCondition1;
+    @Column(name = "double_random_company_industry_type", length = 64, nullable = false)
+    private String doubleRandomCompanyIndustryType;
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "double_random_manager_condition_2", length = 64, nullable = false)
-    private String doubleRandomManagerCondition2;
+    @Column(name = "double_random_company_ratio", length = 64, nullable = false)
+    private String doubleRandomCompanyRatio;
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "double_random_manager_condition_3", length = 64, nullable = false)
-    private String doubleRandomManagerCondition3;
+    @Column(name = "double_random_manager_name", length = 64, nullable = false)
+    private String doubleRandomManagerName;
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "double_random_manager_condition_4", length = 64, nullable = false)
-    private String doubleRandomManagerCondition4;
+    @Column(name = "double_random_manager_number", length = 64, nullable = false)
+    private String doubleRandomManagerNumber;
+
+    @NotNull
+    @Size(max = 64)
+    @Column(name = "double_random_manager_department", length = 64, nullable = false)
+    private String doubleRandomManagerDepartment;
+
+    @NotNull
+    @Size(max = 64)
+    @Column(name = "double_random_manager_ratio", length = 64, nullable = false)
+    private String doubleRandomManagerRatio;
 
     @OneToMany(mappedBy = "doubleRandom")
     @JsonIgnore
@@ -137,108 +147,134 @@ public class DoubleRandom implements Serializable {
         this.doubleRandomNotary = doubleRandomNotary;
     }
 
-    public String getDoubleRandomCompanyCondition1() {
-        return doubleRandomCompanyCondition1;
+    public String getDoubleRandomCompanyName() {
+        return doubleRandomCompanyName;
     }
 
-    public DoubleRandom doubleRandomCompanyCondition1(String doubleRandomCompanyCondition1) {
-        this.doubleRandomCompanyCondition1 = doubleRandomCompanyCondition1;
+    public DoubleRandom doubleRandomCompanyName(String doubleRandomCompanyName) {
+        this.doubleRandomCompanyName = doubleRandomCompanyName;
         return this;
     }
 
-    public void setDoubleRandomCompanyCondition1(String doubleRandomCompanyCondition1) {
-        this.doubleRandomCompanyCondition1 = doubleRandomCompanyCondition1;
+    public void setDoubleRandomCompanyName(String doubleRandomCompanyName) {
+        this.doubleRandomCompanyName = doubleRandomCompanyName;
     }
 
-    public String getDoubleRandomCompanyCondition2() {
-        return doubleRandomCompanyCondition2;
+    public String getDoubleRandomCompanyArea() {
+        return doubleRandomCompanyArea;
     }
 
-    public DoubleRandom doubleRandomCompanyCondition2(String doubleRandomCompanyCondition2) {
-        this.doubleRandomCompanyCondition2 = doubleRandomCompanyCondition2;
+    public DoubleRandom doubleRandomCompanyArea(String doubleRandomCompanyArea) {
+        this.doubleRandomCompanyArea = doubleRandomCompanyArea;
         return this;
     }
 
-    public void setDoubleRandomCompanyCondition2(String doubleRandomCompanyCondition2) {
-        this.doubleRandomCompanyCondition2 = doubleRandomCompanyCondition2;
+    public void setDoubleRandomCompanyArea(String doubleRandomCompanyArea) {
+        this.doubleRandomCompanyArea = doubleRandomCompanyArea;
     }
 
-    public String getDoubleRandomCompanyCondition3() {
-        return doubleRandomCompanyCondition3;
+    public String getDoubleRandomCompanySupervisory() {
+        return doubleRandomCompanySupervisory;
     }
 
-    public DoubleRandom doubleRandomCompanyCondition3(String doubleRandomCompanyCondition3) {
-        this.doubleRandomCompanyCondition3 = doubleRandomCompanyCondition3;
+    public DoubleRandom doubleRandomCompanySupervisory(String doubleRandomCompanySupervisory) {
+        this.doubleRandomCompanySupervisory = doubleRandomCompanySupervisory;
         return this;
     }
 
-    public void setDoubleRandomCompanyCondition3(String doubleRandomCompanyCondition3) {
-        this.doubleRandomCompanyCondition3 = doubleRandomCompanyCondition3;
+    public void setDoubleRandomCompanySupervisory(String doubleRandomCompanySupervisory) {
+        this.doubleRandomCompanySupervisory = doubleRandomCompanySupervisory;
     }
 
-    public String getDoubleRandomCompanyCondition4() {
-        return doubleRandomCompanyCondition4;
+    public String getDoubleRandomCompanyType() {
+        return doubleRandomCompanyType;
     }
 
-    public DoubleRandom doubleRandomCompanyCondition4(String doubleRandomCompanyCondition4) {
-        this.doubleRandomCompanyCondition4 = doubleRandomCompanyCondition4;
+    public DoubleRandom doubleRandomCompanyType(String doubleRandomCompanyType) {
+        this.doubleRandomCompanyType = doubleRandomCompanyType;
         return this;
     }
 
-    public void setDoubleRandomCompanyCondition4(String doubleRandomCompanyCondition4) {
-        this.doubleRandomCompanyCondition4 = doubleRandomCompanyCondition4;
+    public void setDoubleRandomCompanyType(String doubleRandomCompanyType) {
+        this.doubleRandomCompanyType = doubleRandomCompanyType;
     }
 
-    public String getDoubleRandomManagerCondition1() {
-        return doubleRandomManagerCondition1;
+    public String getDoubleRandomCompanyIndustryType() {
+        return doubleRandomCompanyIndustryType;
     }
 
-    public DoubleRandom doubleRandomManagerCondition1(String doubleRandomManagerCondition1) {
-        this.doubleRandomManagerCondition1 = doubleRandomManagerCondition1;
+    public DoubleRandom doubleRandomCompanyIndustryType(String doubleRandomCompanyIndustryType) {
+        this.doubleRandomCompanyIndustryType = doubleRandomCompanyIndustryType;
         return this;
     }
 
-    public void setDoubleRandomManagerCondition1(String doubleRandomManagerCondition1) {
-        this.doubleRandomManagerCondition1 = doubleRandomManagerCondition1;
+    public void setDoubleRandomCompanyIndustryType(String doubleRandomCompanyIndustryType) {
+        this.doubleRandomCompanyIndustryType = doubleRandomCompanyIndustryType;
     }
 
-    public String getDoubleRandomManagerCondition2() {
-        return doubleRandomManagerCondition2;
+    public String getDoubleRandomCompanyRatio() {
+        return doubleRandomCompanyRatio;
     }
 
-    public DoubleRandom doubleRandomManagerCondition2(String doubleRandomManagerCondition2) {
-        this.doubleRandomManagerCondition2 = doubleRandomManagerCondition2;
+    public DoubleRandom doubleRandomCompanyRatio(String doubleRandomCompanyRatio) {
+        this.doubleRandomCompanyRatio = doubleRandomCompanyRatio;
         return this;
     }
 
-    public void setDoubleRandomManagerCondition2(String doubleRandomManagerCondition2) {
-        this.doubleRandomManagerCondition2 = doubleRandomManagerCondition2;
+    public void setDoubleRandomCompanyRatio(String doubleRandomCompanyRatio) {
+        this.doubleRandomCompanyRatio = doubleRandomCompanyRatio;
     }
 
-    public String getDoubleRandomManagerCondition3() {
-        return doubleRandomManagerCondition3;
+    public String getDoubleRandomManagerName() {
+        return doubleRandomManagerName;
     }
 
-    public DoubleRandom doubleRandomManagerCondition3(String doubleRandomManagerCondition3) {
-        this.doubleRandomManagerCondition3 = doubleRandomManagerCondition3;
+    public DoubleRandom doubleRandomManagerName(String doubleRandomManagerName) {
+        this.doubleRandomManagerName = doubleRandomManagerName;
         return this;
     }
 
-    public void setDoubleRandomManagerCondition3(String doubleRandomManagerCondition3) {
-        this.doubleRandomManagerCondition3 = doubleRandomManagerCondition3;
+    public void setDoubleRandomManagerName(String doubleRandomManagerName) {
+        this.doubleRandomManagerName = doubleRandomManagerName;
     }
 
-    public String getDoubleRandomManagerCondition4() {
-        return doubleRandomManagerCondition4;
+    public String getDoubleRandomManagerNumber() {
+        return doubleRandomManagerNumber;
     }
 
-    public DoubleRandom doubleRandomManagerCondition4(String doubleRandomManagerCondition4) {
-        this.doubleRandomManagerCondition4 = doubleRandomManagerCondition4;
+    public DoubleRandom doubleRandomManagerNumber(String doubleRandomManagerNumber) {
+        this.doubleRandomManagerNumber = doubleRandomManagerNumber;
         return this;
     }
 
-    public void setDoubleRandomManagerCondition4(String doubleRandomManagerCondition4) {
-        this.doubleRandomManagerCondition4 = doubleRandomManagerCondition4;
+    public void setDoubleRandomManagerNumber(String doubleRandomManagerNumber) {
+        this.doubleRandomManagerNumber = doubleRandomManagerNumber;
+    }
+
+    public String getDoubleRandomManagerDepartment() {
+        return doubleRandomManagerDepartment;
+    }
+
+    public DoubleRandom doubleRandomManagerDepartment(String doubleRandomManagerDepartment) {
+        this.doubleRandomManagerDepartment = doubleRandomManagerDepartment;
+        return this;
+    }
+
+    public void setDoubleRandomManagerDepartment(String doubleRandomManagerDepartment) {
+        this.doubleRandomManagerDepartment = doubleRandomManagerDepartment;
+    }
+
+    public String getDoubleRandomManagerRatio() {
+        return doubleRandomManagerRatio;
+    }
+
+    public DoubleRandom doubleRandomManagerRatio(String doubleRandomManagerRatio) {
+        this.doubleRandomManagerRatio = doubleRandomManagerRatio;
+        return this;
+    }
+
+    public void setDoubleRandomManagerRatio(String doubleRandomManagerRatio) {
+        this.doubleRandomManagerRatio = doubleRandomManagerRatio;
     }
 
     public Set<Task> getTasks() {
@@ -318,14 +354,16 @@ public class DoubleRandom implements Serializable {
             ", doubleRandomName='" + doubleRandomName + "'" +
             ", doubleRandomDate='" + doubleRandomDate + "'" +
             ", doubleRandomNotary='" + doubleRandomNotary + "'" +
-            ", doubleRandomCompanyCondition1='" + doubleRandomCompanyCondition1 + "'" +
-            ", doubleRandomCompanyCondition2='" + doubleRandomCompanyCondition2 + "'" +
-            ", doubleRandomCompanyCondition3='" + doubleRandomCompanyCondition3 + "'" +
-            ", doubleRandomCompanyCondition4='" + doubleRandomCompanyCondition4 + "'" +
-            ", doubleRandomManagerCondition1='" + doubleRandomManagerCondition1 + "'" +
-            ", doubleRandomManagerCondition2='" + doubleRandomManagerCondition2 + "'" +
-            ", doubleRandomManagerCondition3='" + doubleRandomManagerCondition3 + "'" +
-            ", doubleRandomManagerCondition4='" + doubleRandomManagerCondition4 + "'" +
+            ", doubleRandomCompanyName='" + doubleRandomCompanyName + "'" +
+            ", doubleRandomCompanyArea='" + doubleRandomCompanyArea + "'" +
+            ", doubleRandomCompanySupervisory='" + doubleRandomCompanySupervisory + "'" +
+            ", doubleRandomCompanyType='" + doubleRandomCompanyType + "'" +
+            ", doubleRandomCompanyIndustryType='" + doubleRandomCompanyIndustryType + "'" +
+            ", doubleRandomCompanyRatio='" + doubleRandomCompanyRatio + "'" +
+            ", doubleRandomManagerName='" + doubleRandomManagerName + "'" +
+            ", doubleRandomManagerNumber='" + doubleRandomManagerNumber + "'" +
+            ", doubleRandomManagerDepartment='" + doubleRandomManagerDepartment + "'" +
+            ", doubleRandomManagerRatio='" + doubleRandomManagerRatio + "'" +
             '}';
     }
 }

@@ -43,7 +43,7 @@
             "fieldValidateRulesMaxlength": 32
         },
         {
-            "fieldName": "doubleRandomCompanyCondition1",
+            "fieldName": "doubleRandomCompanyName",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -52,7 +52,7 @@
             "fieldValidateRulesMaxlength": 64
         },
         {
-            "fieldName": "doubleRandomCompanyCondition2",
+            "fieldName": "doubleRandomCompanyArea",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -61,7 +61,7 @@
             "fieldValidateRulesMaxlength": 64
         },
         {
-            "fieldName": "doubleRandomCompanyCondition3",
+            "fieldName": "doubleRandomCompanySupervisory",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -70,7 +70,7 @@
             "fieldValidateRulesMaxlength": 64
         },
         {
-            "fieldName": "doubleRandomCompanyCondition4",
+            "fieldName": "doubleRandomCompanyType",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -79,7 +79,7 @@
             "fieldValidateRulesMaxlength": 64
         },
         {
-            "fieldName": "doubleRandomManagerCondition1",
+            "fieldName": "doubleRandomCompanyIndustryType",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -88,7 +88,7 @@
             "fieldValidateRulesMaxlength": 64
         },
         {
-            "fieldName": "doubleRandomManagerCondition2",
+            "fieldName": "doubleRandomCompanyRatio",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -97,7 +97,7 @@
             "fieldValidateRulesMaxlength": 64
         },
         {
-            "fieldName": "doubleRandomManagerCondition3",
+            "fieldName": "doubleRandomManagerName",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -106,7 +106,25 @@
             "fieldValidateRulesMaxlength": 64
         },
         {
-            "fieldName": "doubleRandomManagerCondition4",
+            "fieldName": "doubleRandomManagerNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "doubleRandomManagerDepartment",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "doubleRandomManagerRatio",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",

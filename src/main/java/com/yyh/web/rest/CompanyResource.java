@@ -8,6 +8,7 @@ import com.yyh.web.rest.util.HeaderUtil;
 import com.yyh.web.rest.util.PaginationUtil;
 
 import io.swagger.annotations.ApiParam;
+import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -21,7 +22,9 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -42,7 +45,7 @@ public class CompanyResource {
     /**
      * POST  /companies/import : Import company list.
      *
-     * @return the ResponseEntity with status 201 (Imported), or with status 400 (Bad Request)
+     * @return the ResponseEntity with status 201 (Imported) and with body the new company, or with status 400 (Bad Request) if the company has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PostMapping("/companies/import")
@@ -104,12 +107,16 @@ public class CompanyResource {
      */
     @GetMapping("/companies")
     @Timed
-    public ResponseEntity<List<Company>> getAllCompanies(@ApiParam Pageable pageable)
+    public ResponseEntity<?> getAllCompanies(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Companies");
         Page<Company> page = companyService.findAll(pageable);
+        long totalCount = companyRepository.count();
+        Map<String, Object> map = new HashMap<>();
+        map.put("totalCount", totalCount);
+        map.put("companies", page.getContent());
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/companies");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+        return new ResponseEntity<>(map, headers, HttpStatus.OK);
     }
 
     /**
